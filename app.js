@@ -12,7 +12,12 @@ app.use(express.static('.'));
 
 // Route for the root path to directly serve the index.html file
 app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/node/303`);
+  res.sendFile(`${__dirname}/index.html`);
+});
+
+// Additional route to serve the index.html file at /node/255
+app.get('/node/255', (req, res) => {
+  res.sendFile(`${__dirname}/index.html`);
 });
 
 // Start the server
